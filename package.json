@@ -1,0 +1,30 @@
+{
+  "name": "playwright_new",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx @cucumber/cucumber --config cucumber.config.js --format pretty --retry 1",
+    "test:ui": "set TEST_TAGS=@ui && npx @cucumber/cucumber --config cucumber.config.js --format ./reporter.js",
+    "test:demo": "set TEST_TAGS=@demo && npx @cucumber/cucumber --config cucumber.config.js -f @cucumber/pretty-formatter",
+    "test:api": "set TEST_TAGS=@api&& npx @cucumber/cucumber --config cucumber.config.js --format ./reporter.js",
+    "test:gql": "set TEST_TAGS=@gql&& npx @cucumber/cucumber --config cucumber.config.js --format ./reporter.js",
+    "test:run": "npx @cucumber/cucumber --format ./reporter.js",
+    "test:allure": "npx allure generate ./allure-results --clean && allure open allure-report"
+  },
+  
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^9.6.0",
+    "@cucumber/pretty-formatter": "^1.0.0",
+    "@playwright/test": "^1.38.1",
+    "@types/node": "^20.10.4",
+    "allure-cucumberjs": "^2.9.2",
+    "allure-js-commons": "^2.9.2"
+  },
+  "dependencies": {
+    "axios": "^1.5.1"
+  }
+}
